@@ -1,0 +1,23 @@
+{
+  "name": "alura-nodejs",
+  "version": "1.0.0",
+  "description": "Projeto feito atraveś do material de estudo da Alura no curso de Node.js: Inovando com Javascript no backend",
+  "main": "produtoWeb.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GustavoDiogo/alura-nodejs.git"
+  },
+  "author": "Gustavo Diogo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GustavoDiogo/alura-nodejs/issues"
+  },
+  "homepage": "https://github.com/GustavoDiogo/alura-nodejs#readme",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.2"
+  }
+}
