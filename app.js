@@ -1,18 +1,6 @@
-var express = require('express');
-var app = express();
+var app = require('./config/express.js')();
 
-app.set('view engine', 'ejs');
-
-app.get('/produtos',(request,response)=>{
-	response.render("produtos/lista");
+app.listen(3000,function(){
+	console.log("localhost:" + 3000);
 });
 
-var port = 3000;
-
-serverInit(3000);
-
-function serverInit(port){
-	app.listen(port,function(){
-		console.log("localhost:" + port);
-	});
-}
