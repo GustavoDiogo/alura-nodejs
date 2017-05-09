@@ -1,12 +1,13 @@
-module.exports = function loadRoutes(app){
-	app.get('/produtos',(request,response)=>{
-		var conn = app.infra.dbConnection();
-		
-		conn.query('SELECT * FROM LIVROS',function(err,results){
-			response.render('produtos/lista',{lista:results});
+module.exports = function(app){
+	app.get('/produtos',(req,res)=>{
+		var connection = app.infra.dbConnection();
+		var produtos = app.infra.query.produtos(connection);
+
+		produtos.lista(function(errors,results){
+			res.render('produtos/lista',{lista:results});
 		});
 
-		conn.end();
+		connection.end();
 
 	});
 }
