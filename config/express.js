@@ -9,6 +9,7 @@ module.exports = function(){
 	app.set('views', 'views');
 
 	app.use(bodyParser.urlencoded({extended: true}));
+	app.use(bodyParser.json());
 
 	load('routes')
 		.then('infra')

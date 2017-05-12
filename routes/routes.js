@@ -4,7 +4,14 @@ module.exports = function(app){
 		var produtos = new app.infra.models.ProdutosDAO(connection);
 
 		produtos.lista(function(errors,results){
-			res.render('produtos/lista',{lista:results});
+			res.format({
+				html: function(){
+					res.render('produtos/lista',{lista:results});
+				},
+				json: function(){
+					res.json(results);
+				}
+			})			
 		});
 		connection.end();
 	});
@@ -13,7 +20,7 @@ module.exports = function(app){
 		res.render('produtos/form');
 	});
 
-	app.post('/produtos/salva',function(req,res){
+	app.post('/produtos',function(req,res){
 		var connection = app.infra.dbConnection();
 		var produtos = new app.infra.models.ProdutosDAO(connection);
 
